@@ -1,0 +1,69 @@
+package hybrid.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import hybrid.base.Browser;
+import hybrid.helper.CommonMethods;
+
+public class CreateAccount extends Browser{
+	
+	public CreateAccount(WebDriver driver) {
+		super(driver);
+	}
+	CommonMethods cm = new CommonMethods();
+	
+	/* ================================= Page Elements ================================= */
+	
+	public WebElement getFirstname() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='firstname']");
+	}
+	
+	public WebElement getLastname() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='lastname']");
+	}
+	
+	public WebElement getEmail() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='email_address']");
+	}
+	
+	public WebElement getPassword() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='password']");
+	}
+	
+	public WebElement getConfirmPassword() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='confirmation']");
+	}
+	
+	public WebElement getSubmitBtn() 
+	{
+		return cm.findElementByXpath(driver, "//button[@title='Register']");
+	}
+	
+	
+	/* ==================================== Actions ==================================== */
+	
+	public void enterFirstname(String fname) {
+		WebElement firstname = getFirstname();
+		cm.enterText(driver, firstname, fname);
+		
+	}
+	
+	public void enterDetails(String fname, String lname, String email, String pwd, String conf pwd, String ) {
+		
+		
+		getLastname();
+		getEmail();
+		getPassword();
+		getConfirmPassword();	
+		getSubmitBtn();
+	}
+	
+	
+	
+}

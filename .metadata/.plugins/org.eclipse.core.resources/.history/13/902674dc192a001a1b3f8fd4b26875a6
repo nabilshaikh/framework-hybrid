@@ -1,0 +1,4 @@
+driverpath =/Drivers
+driverfile =IEDriverServer.exe
+reportConfigPath=C:\Users\nabil.shaikh\git\Garda_Automation\oisin.automation\Configuration\extent-config.xml
+app_url=http://live.demoguru99.com/index.php/customer/account/create/

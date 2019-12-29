@@ -1,0 +1,47 @@
+/*package oisin.automation.base;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import oisin.automation.helper.CommonMethods;
+import oisin.automation.helper.PropertiesFile;
+import oisin.automation.pages.Intelligence;
+import oisin.automation.pages.Login;
+
+public class Hooks {
+	
+	public static WebDriver driver;
+	Browser browser = new Browser(null);
+	String username;
+	String password;
+	String url;
+	CommonMethods cm = PageFactory.initElements(driver, CommonMethods.class);
+	Intelligence intelligence = PageFactory.initElements(driver, Intelligence.class);
+	
+	@Before
+    public void beforeScenario() throws IOException, InterruptedException{
+		driver = browser.getDriver();
+		username = PropertiesFile.getProperty("nciu_insp_1");
+		password = PropertiesFile.getProperty("password");
+		url = PropertiesFile.getProperty("app_url");
+		browser.launchApplication(driver, url);
+		Thread.sleep(2000);
+		Assert.assertEquals(driver.getTitle(), "Login");
+		Login login = PageFactory.initElements(driver, Login.class);
+		login.entercredentials(username, password);	
+		Thread.sleep(3000);
+		Assert.assertEquals(driver.getTitle(), "Workbasket");
+    } 
+ 
+	@After
+    public void afterScenario(){
+        System.out.println("This will run after the Scenario");
+    }
+
+}
+*/

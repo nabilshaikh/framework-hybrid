@@ -1,0 +1,3 @@
+driverpath =/Drivers
+driverfile =IEDriverServer.exe
+reportConfigPath=C:\Users\nabil.shaikh\git\Garda_Automation\oisin.automation\Configuration\extent-config.xml

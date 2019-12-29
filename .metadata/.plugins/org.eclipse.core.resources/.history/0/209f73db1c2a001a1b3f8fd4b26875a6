@@ -1,0 +1,12 @@
+package hybrid.pages;
+
+import org.openqa.selenium.WebDriver;
+
+import hybrid.base.Browser;
+
+public class CreateAccount extends Browser{
+	
+	public CreateAccount(WebDriver driver) {
+		super(driver);
+	}
+}

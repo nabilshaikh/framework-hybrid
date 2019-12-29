@@ -1,0 +1,85 @@
+/*package oisin.automation.base;
+
+import java.awt.AWTException;
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.ResourceCDN;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import oisin.automation.helper.CommonMethods;
+import oisin.automation.helper.PropertiesFile;
+
+public class ExtentReport 
+{
+	public static ExtentHtmlReporter htmlReporter;
+	public static ExtentReports extent;
+	public static ExtentTest test;
+	public static WebDriver driver;
+	String author = System.getProperty("user.name");
+	static String suite;
+	
+
+	
+	@BeforeSuite
+	public static void f(ITestContext ctx) {
+		  suite = ctx.getSuite().getName();
+	}
+	@BeforeSuite
+	public void setup11(ITestContext ctx) throws IOException{
+		suite = ctx.getSuite().getName();
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/Report_"+suite+".html");
+		htmlReporter.loadXMLConfig(new File(System.getProperty("user.dir")+"/extent-config.xml"));
+		htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
+		htmlReporter.config().setDocumentTitle(suite+" - Garda Automation Report");
+		htmlReporter.config().setReportName(suite+" - Garda Automation Report");
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
+		extent.setSystemInfo("Tester", author);
+		extent.setSystemInfo("Environment", PropertiesFile.getProperty("Execution_URL"));
+	
+	}	
+	@AfterMethod
+	public void getResult(ITestResult result) throws InterruptedException, AWTException, IOException{
+		
+		test.assignAuthor(author);
+		String testClassName = result.getTestClass().getName();
+		
+		if(result.getStatus()==ITestResult.FAILURE){
+			String path = CommonMethods.getScreenshot(driver);
+			test.fail(MarkupHelper.createLabel(result.getName()+" Test Case Failed"+" in Script - "+testClassName.substring(17)+
+					"Due to "+result.getThrowable().getMessage(), ExtentColor.RED), MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+			driver = baseFunctions.getDriver();
+			//commonMethods cm = PageFactory.initElements(driver, commonMethods.class);
+			//cm.captureScreenshot(driver, "Zishaan");
+			
+			test.fail(result.getName()+" Test Case Failed"+" in Script - "+testClassName.substring(17)+
+					". Due to "+result.getThrowable().getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(path).build());
+			//test.fail(result.getThrowable());
+		}
+		else if(result.getStatus()==ITestResult.SUCCESS){
+			test.pass(MarkupHelper.createLabel(result.getName()+" Test Case Passed"+" in Script - "+testClassName.substring(17), ExtentColor.GREEN));
+		}
+		else{
+			test.skip(MarkupHelper.createLabel(result.getName()+" Test Case Skipped"+" in Script - "+testClassName.substring(17), ExtentColor.YELLOW));
+			//test.skip(result.getThrowable());
+		}
+	}	
+	@AfterSuite
+	public void teardown(){
+		extent.flush();
+	}
+}
+*/

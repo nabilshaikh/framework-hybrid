@@ -1,0 +1,33 @@
+package hybrid.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import hybrid.base.Browser;
+import hybrid.helper.CommonMethods;
+
+public class CreateAccount extends Browser{
+	
+	public CreateAccount(WebDriver driver) {
+		super(driver);
+	}
+	CommonMethods cm = new CommonMethods();
+	
+	/* ================================= Page Elements ================================= */
+	
+	public WebElement getFirstname() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='firstname']");
+	}
+	
+	public WebElement getLastname() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='lastname']");
+	}
+	
+	
+	/* ==================================== Actions ==================================== */
+	
+	
+	
+}

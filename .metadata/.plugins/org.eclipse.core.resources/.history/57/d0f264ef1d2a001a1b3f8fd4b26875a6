@@ -1,0 +1,20 @@
+package hybrid.pages;
+
+import org.openqa.selenium.WebDriver;
+
+import hybrid.base.Browser;
+import hybrid.helper.CommonMethods;
+
+public class CreateAccount extends Browser{
+	
+	public CreateAccount(WebDriver driver) {
+		super(driver);
+	}
+	CommonMethods cm = new CommonMethods();
+	
+	/* ================================= Page Elements ================================= */
+	
+	
+	/* ==================================== Actions ==================================== */
+	
+}

@@ -1,0 +1,10 @@
+package hybrid.stepdefinitions;
+
+import org.openqa.selenium.WebDriver;
+
+public class CreateAccount {
+	
+	public static WebDriver driver;
+	Browser browser = new Browser(null);
+	
+}

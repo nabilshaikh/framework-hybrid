@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: testautomation.framework_hybrid.AppTest
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.818 sec

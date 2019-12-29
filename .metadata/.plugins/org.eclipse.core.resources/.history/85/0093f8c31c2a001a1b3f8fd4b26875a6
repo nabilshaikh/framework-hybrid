@@ -1,0 +1,9 @@
+package hybrid.pages;
+
+public class CreateAccount extends Browser{
+
+	public static void main(String[] args) {
+		
+	}
+
+}

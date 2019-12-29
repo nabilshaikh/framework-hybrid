@@ -1,0 +1,48 @@
+package hybrid.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import hybrid.base.Browser;
+import hybrid.helper.CommonMethods;
+
+public class CreateAccount extends Browser{
+	
+	public CreateAccount(WebDriver driver) {
+		super(driver);
+	}
+	CommonMethods cm = new CommonMethods();
+	
+	/* ================================= Page Elements ================================= */
+	
+	public WebElement getFirstname() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='firstname']");
+	}
+	
+	public WebElement getLastname() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='lastname']");
+	}
+	
+	public WebElement getEmail() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='email_address']");
+	}
+	
+	public WebElement getPassword() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='password']");
+	}
+	
+	public WebElement getConfirmPassword() 
+	{
+		return cm.findElementByXpath(driver, "//input[@id='password']");
+	}
+	
+	
+	/* ==================================== Actions ==================================== */
+	
+	
+	
+}
