@@ -33,20 +33,8 @@ public class Browser
 	{
 		File file = new File(System.getProperty("user.dir") + "\\"
 				+ PropertiesFile.getProperty("driverpath") + "\\" + PropertiesFile.getProperty("driverfile"));
-		System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-		driver = new InternetExplorerDriver();
-						
-		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-		capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-		capabilities.setCapability("requireWindowFocus", true);
-		capabilities.setCapability("ignoreZoomSetting", true);
-		capabilities.setCapability("nativeEvents", false);
-		capabilities.setCapability(CapabilityType.BROWSER_NAME, "IE");
-		capabilities.setCapability("unexpectedAlertBehaviour", "accept");
-		capabilities.setCapability("ignoreProtectedModeSettings", true);
-		capabilities.setCapability("disable-popup-blocking", true);
-		
-
+		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+		driver = new ChromeDriver();
 		return driver;
 	}
 	
